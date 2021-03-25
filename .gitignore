@@ -1,0 +1,5 @@
+*.bin
+*.o
+
+cross-compiler
+src/cross-compiler/
