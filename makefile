@@ -1,11 +1,11 @@
 
 bootloader:
 
-	cd /mnt/c/Users/Daniel/Documents/git/DanOS/DanOS/src/x86-64/bootloader && nasm -f elf32 -o bootloader.o boot.asm
-	mv /mnt/c/Users/Daniel/Documents/git/DanOS/DanOS/src/x86-64/bootloader/bootloader.o /mnt/c/Users/Daniel/Documents/git/DanOS/DanOS/
+	cd src/x86-64/bootloader && nasm -f elf32 -o bootloader.o boot.asm
+	mv src/x86-64/bootloader/bootloader.o /mnt/c/Users/Daniel/Documents/git/DanOS/DanOS/
 
 kernel_entry:
-	nasm -f elf /mnt/c/Users/Daniel/Documents/git/DanOS/DanOS/src/x86-64/bootloader/kernel_enter.asm -o kernel_enter.o
+	nasm -f elf src/x86-64/bootloader/kernel_enter.asm -o kernel_enter.o
 
 kernel.bin:
 	i686-elf-ld -o kernel.bin -Ttext 0x1000 kernel.o kernel_enter.o --oformat binary
