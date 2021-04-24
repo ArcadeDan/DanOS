@@ -1,6 +1,6 @@
+[org 0x7c00]
 
 
-[bits 16]
 KERNEL_OFFSET equ 0x1000
 
     mov [BOOT_DRIVE], dl
@@ -22,6 +22,7 @@ KERNEL_OFFSET equ 0x1000
     %include "print32.asm"
     %include "gdt.asm"
     %include "switch32.asm"
+    
     
 
 
