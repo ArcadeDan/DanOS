@@ -28,3 +28,8 @@ final:
 	i686-elf-ld -o DanOS.bin -Ttext 0x1000 kernel.o kernel_enter.o --oformat binary
 	cat bootloader.bin DanOS.bin > DanOS-image.bin
 	sudo qemu-img resize DanOS-image.bin +20K
+
+	rm bootloader.bin
+	rm DanOS.bin
+	rm kernel_enter.o
+	rm kernel.o
