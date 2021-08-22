@@ -1,15 +1,12 @@
-
 void dummy_test_entrypoint() 
 {
 
 }
 
 
-void kernel_main(void)
+void main()
 {
-    while (1)
-    {
-    char* video_memory = (char*) 0xb8000;
-    *video_memory = 'X';
-    }
+
+    volatile char* video_memory = (char*) 0xb8000;
+    video_memory[0] = 'X';
 }
