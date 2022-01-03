@@ -1,2 +1,3 @@
 *.c linguist-language=C
 *.asm linguist-language=Assembly
+*.3 linguist-language=text
