@@ -1,14 +1,11 @@
 
 print_hex:
     pusha
-
     mov cx, 0 
-
 
 hex_loop:
     cmp cx, 4 
     je end
-    
     
     mov ax, dx 
     and ax, 0x000f 

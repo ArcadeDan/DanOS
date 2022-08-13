@@ -3,27 +3,27 @@
 
 KERNEL_OFFSET equ 0x1000
 
-    mov [BOOT_DRIVE], dl
-    mov bp, 0x9000
-    mov sp, bp
+mov [BOOT_DRIVE], dl
+mov bp, 0x9000
+mov sp, bp
 
-    mov bx, MSG_REAL_MODE
-    call print
-    call print_nl
+mov bx, MSG_REAL_MODE
+call print
+call print_nl
 
-    call load_kernel
-    call switch_to_pm
-    jmp $
+call load_kernel
+call switch_to_pm
+jmp $
    
 
-    %include "disk.asm"
-    %include "print.asm"
-    %include "printhex.asm"
-    %include "print32.asm"
-    %include "gdt.asm"
-    %include "switch32.asm"
+%include "disk.asm"
+%include "print.asm"
+%include "printhex.asm"
+%include "print32.asm"
+%include "gdt.asm"
+%include "switch32.asm"
     
-    
+
 
 
 [bits 16]
